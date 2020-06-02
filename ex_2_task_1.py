@@ -96,7 +96,8 @@ def is_valid_email_address(s):
     if part_2_2 not in ("com", "edu", "org", "gov"):
         return (7, 'past-dot part invalid, must be from: com, edu, org, gov')
 
-s = "ayang@gmail.com"
+s = "tc@tank.com"
+print (s) #have the email address printed + error message
 is_valid_email_address(s)
 
 
