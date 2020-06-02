@@ -64,18 +64,18 @@ is_valid_email_address(ayang@gmail.com)
 
 def is_valid_email_address(s):   
 
-    i_mark = s.count("@")
+    i_mark = s.count("@") #string method, to count how many times @ appears in the entire string, without parameter 
     if i_mark != 1: #python not equal operator 
         return (1, 'Must have exactly one @!')
 
-    w = s.split("@")
+    w = s.split("@") #sting method, to split by specified separator (@) and return a list of 2 values
     part_1 = w[0]
     part_2 = w[1]
-    #if part_1.count() < 3 or part_1.count() > 16: #count method needs a defined argument
-    if len(part_1) < 3 or len(part_1) > 16:
+    #if part_1.count() < 3 or part_1.count() > 16: #count method needs a defined argument, and it's to count for certain specified value
+    if len(part_1) < 3 or len(part_1) > 16: #where len() is a built in function that returns "the number of characters in a string"
         return (2, 'pre @ part must contain 3 - 16 alfanum chars')
     #elif part_1.alfanum() > 1: #using isalnum method #str object has no attribute alfanum, did not work 
-    elif part_1.isalnum() == False:
+    elif part_1.isalnum() == False: #boolean strings, to check if string is all alphanumeric characters 
         return (3, 'pre @ part must only contain alfanum chars')
 
 
@@ -83,14 +83,14 @@ def is_valid_email_address(s):
     if part_2.count(".") != 1: #to count the "."
         return (4, 'post @ part must have exactly one dot!')
 
-    w2 = part_2.split(".")
+    w2 = part_2.split(".") #string method, split the second value by (.) 
     part_2_1 = w2[0]
     part_2_2 = w2[1]
     #if part_2.count() < 2 or part_2.count() > 8: #same mistake here 
     #if len(part_2) < 2 or len(part_2) > 8: #wrong part! 
     if len(part_2_1) < 2 or len(part_2_1) > 8:    
         return (5, 'part after @ and before . must contain 2 - 8 alfanum chars')
-    elif part_2_1.isalnum() == False:
+    elif part_2_1.isalnum() == False: #boolean strings, to check if string is all alphanumeric characters 
         return (6, 'part after @ and before . must only contain alfanum chars')
 
     if part_2_2 not in ("com", "edu", "org", "gov"):
