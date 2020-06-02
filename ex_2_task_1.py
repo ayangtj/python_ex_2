@@ -34,7 +34,7 @@
 # As proof, please manually copy/paste the console output for one run into a file called
 # results1.txt
 
-def is_valid_email_address(s):
+
     
     # your code here
     '''
@@ -43,6 +43,11 @@ def is_valid_email_address(s):
     C = vars()
     if s = (A + "@" + B + "." + C) #not quite sure how to define the variables to be without argument
     '''
+
+
+    '''
+    if s = (A, "@", B, ".", C) #attempted using unchangable values to define the required email structure, didn't work 
+    and 
         i_a = A.isalnum() #using isalnum method
         i_b = B.isalnum() #using isalnum method
     and (3 =< i_a =< 16)
@@ -55,10 +60,44 @@ def is_valid_email_address(s):
         return err
 
 is_valid_email_address(ayang@gmail.com)
+    '''
 
-    
+def is_valid_email_address(s):   
+
+    i_mark = s.count("@")
+    if i_mark != 1: #python not equal operator 
+        return (1, 'Must have exactly one @!')
+
+    w = s.split("@")
+    part_1 = w[0]
+    part_2 = w[1]
+    #if part_1.count() < 3 or part_1.count() > 16: #count method needs a defined argument
+    if len(part_1) < 3 or len(part_1) > 16:
+        return (2, 'pre @ part must contain 3 - 16 alfanum chars')
+    #elif part_1.alfanum() > 1: #using isalnum method #str object has no attribute alfanum, did not work 
+    elif part_1.isalnum() == False:
+        return (3, 'pre @ part must only contain alfanum chars')
 
 
+    #if part_2.count() != 1: #wrong method, as it counts part_2 not the ".", hence returned message does not make sense 
+    if part_2.count(".") != 1: #to count the "."
+        return (4, 'post @ part must have exactly one dot!')
+
+    w2 = part_2.split(".")
+    part_2_1 = w2[0]
+    part_2_2 = w2[1]
+    #if part_2.count() < 2 or part_2.count() > 8: #same mistake here 
+    #if len(part_2) < 2 or len(part_2) > 8: #wrong part! 
+    if len(part_2_1) < 2 or len(part_2_1) > 8:    
+        return (5, 'part after @ and before . must contain 2 - 8 alfanum chars')
+    elif part_2_1.isalnum() == False:
+        return (6, 'part after @ and before . must only contain alfanum chars')
+
+    if part_2_2 not in ("com", "edu", "org", "gov"):
+        return (7, 'past-dot part invalid, must be from: com, edu, org, gov')
+
+s = "ayang@gmail.com"
+is_valid_email_address(s)
 
 
 
