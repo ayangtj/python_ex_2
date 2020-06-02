@@ -37,8 +37,41 @@
 def is_valid_email_address(s):
     
     # your code here
+    '''
+    A = vars() #problematic, cannot define each part to be character because it can also be int
+    B = vars()
+    C = vars()
+    if s = (A + "@" + B + "." + C) #not quite sure how to define the variables to be without argument
+    '''
+        i_a = A.isalnum() #using isalnum method
+        i_b = B.isalnum() #using isalnum method
+    and (3 =< i_a =< 16)
+    and (2 =< i_b =< 8)
+    and C in ("com", "edu", "gov", "org"):
+        res = "Sucessful!"
+        return res
+    else 
+        err = "invalid email address."
+        return err
+
+is_valid_email_address(ayang@gmail.com)
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     
