@@ -1,0 +1,43 @@
+charding@iastate.edu
+
+chris.edu
+Out[37]:
+(1, 'Must have exactly one @!')
+
+chris@edu
+Out[38]:
+(4, 'post @ part must have exactly one dot!')
+
+@bla.edu
+Out[39]:
+(2, 'pre @ part must contain 3 - 16 alfanum chars')
+
+throatwobblermangrove@mpfc.org
+Out[40]:
+(2, 'pre @ part must contain 3 - 16 alfanum chars')
+
+chris@X.com
+Out[41]:
+(5, 'part after @ and before . must contain 2 - 8 alfanum chars')
+
+chris.harding@iastate.edu
+Out[42]:
+(3, 'pre @ part must only contain alfanum chars')
+
+chris@pymart.biz
+Out[43]:
+(7, 'past-dot part invalid, must be from: com, edu, org, gov')
+In [44]:
+
+
+chris@letsgo!.org
+Out[44]:
+(6, 'part after @ and before . must only contain alfanum chars')
+
+chris@megasavings.org
+Out[45]:
+(5, 'part after @ and before . must contain 2 - 8 alfanum chars')
+
+tc@tank.com
+Out[47]:
+(2, 'pre @ part must contain 3 - 16 alfanum chars')

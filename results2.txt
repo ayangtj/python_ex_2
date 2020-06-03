@@ -1,0 +1,15 @@
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) Aprils-MacBook-Air:python_ex_2 April$ /usr/local/bin/python3 "/Users/April/Library/Mobile Documents/com~apple~CloudDocs/HCI 584/ayangtj/python_ex_2/ex_2_task_2.py"
+Enter an email address you would like to create:charding@iastate.edu
+Congrats, your new email address is charding@iastate.edu
+(base) Aprils-MacBook-Air:python_ex_2 April$ /usr/local/bin/python3 "/Users/April/Library/Mobile Documents/com~apple~CloudDocs/HCI 584/ayangtj/python_ex_2/ex_2_task_2.py"
+Enter an email address you would like to create:chris.edu
+(1, 'Must have exactly one @!') you have 2 attempts remaining.
+Enter an email address you would like to create:chris@edu
+(4, 'post @ part must have exactly one dot!') you have 1 attempts remaining.
+Enter an email address you would like to create:chris@X.com
+(5, 'part after @ and before . must contain 2 - 8 alfanum chars') you have 0 attempts remaining.
+you have no attempts left.
+(base) Aprils-MacBook-Air:python_ex_2 April$ 
