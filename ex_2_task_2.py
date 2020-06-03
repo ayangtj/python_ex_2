@@ -36,6 +36,44 @@ gave_up = False
 attempts_left = 3
 
 # your code - start
+
+# def create_email(): #Function already exits using module, no need to create new funtion 
+# while gave_up = False: #attempted to write string asking to input email address before 3 attempts are up, not sure why it's telling me "invalid syntax"
+
+
+'''
+if not gave_up: #changing this part to a while true loop for continuing asking for email address input after 1 failed attempt 
+    user_input = input ('Enter an email address you would like to create:')
+    #if is_valid_email_address(user_input) != None: #forgot is_valid_email_address has been redefined in module
+    if is_valid(user_input) != None:
+        #gave_up -= 1 #wrong variable. Results show "you have -1 attempts"
+        attempts_left -= 1
+        print(is_valid(user_input), f'you have {attempts_left} attempts remaining. Please tray again.')
+    elif gave_up == True: #It does not work. Because after first failed attempt, it's not asking for the second attempt. Thinking loop needs to be involved for repeated checking. 
+        attempts_left = 0
+        print(is_valid(user_input), f'you have no attempts left.')
+    else:
+        print(f'Congrats, your new email address is {user_input}')
+        '''
+
+while True:
+    user_input = input('Enter an email address you would like to create:')
+
+    if is_valid(user_input) != None:
+        attempts_left -= 1
+        print(is_valid(user_input), f'you have {attempts_left} attempts remaining. Please tray again.')
+        break 
+
+    if gave_up == False:
+        attempts_left = 0
+        print(is_valid(user_input), f'you have no attempts left.')
+        break
+    else:
+        print(f'Congrats, your new email address is {user_input}')
+        
+
+
+'''
 while True:
     email = input("email address?")
     r, err_str = is_valid(email)
@@ -62,3 +100,4 @@ if not gave_up:
     print("valid email", email)
 else:
     print("invalid email", email)
+    '''
