@@ -56,20 +56,64 @@ if not gave_up: #changing this part to a while true loop for continuing asking f
         print(f'Congrats, your new email address is {user_input}')
         '''
 
+'''
 while True:
     user_input = input('Enter an email address you would like to create:')
 
+    if attempts_left == 1:
+        gave_up == True
+        print(is_valid(user_input), f'you have no attempts left.')
+        break
+    
+
+    #if gave_up == False: #got a bit confused with fave_up = False. Now I think it might actually be in relations to while true loop? Hmm. 
     if is_valid(user_input) != None:
         attempts_left -= 1
         print(is_valid(user_input), f'you have {attempts_left} attempts remaining. Please tray again.')
-        break 
+        #break 
+    
+    if is_valid(user_input) == None:
+        print(f'Congrats, your new email address is {user_input}')
+        break
+    '''
 
-    if gave_up == False:
-        attempts_left = 0
+'''
+
+# This solution does not work right when email is valid, it still returns "you have 2/1 attempts left please try again. Not sure why. 
+
+while gave_up == False:
+    user_input = input('Enter an email address you would like to create:')
+    if is_valid(user_input) != None:
+        attempts_left -= 1
+        print(is_valid(user_input), f'you have {attempts_left} attempts remaining. Please tray again.')
+        #break 
+    elif gave_up == True:
+        attempts_left == 0
         print(is_valid(user_input), f'you have no attempts left.')
         break
-    else:
+    else: 
         print(f'Congrats, your new email address is {user_input}')
+        break 
+ '''  
+
+
+while gave_up == False:
+    user_input = input('Enter an email address you would like to create:')
+    if is_valid(user_input) == None:
+        print(f'Congrats, your new email address is {user_input}')
+        break 
+
+    elif gave_up == True:
+        attempts_left == 0
+        print(is_valid(user_input), f'you have no attempts left.')
+        break
+    
+    else: 
+        attempts_left -= 1
+        print(is_valid(user_input), f'you have {attempts_left} attempts remaining. Please try again.')
+        #break 
+        
+    
         
 
 
