@@ -96,7 +96,8 @@ while gave_up == False:
         break 
  '''  
 
-
+'''
+#this soluiton seems to break it more. Need to look at more examples of while loops I suppose
 while gave_up == False:
     user_input = input('Enter an email address you would like to create:')
     if is_valid(user_input) == None:
@@ -112,7 +113,21 @@ while gave_up == False:
         attempts_left -= 1
         print(is_valid(user_input), f'you have {attempts_left} attempts remaining. Please try again.')
         #break 
-        
+'''
+
+
+while not gave_up:
+    user_input = input('Enter an email address you would like to create:')
+    if is_valid(user_input)[0] is None: #showing only first position of None from the function created  
+        print(f'Congrats, your new email address is {user_input}')
+        break
+    else:
+        attempts_left -= 1
+        print(is_valid(user_input), f'you have {attempts_left} attempts remaining.')
+        if attempts_left == 0:
+            print(f'you have no attempts left.')
+            gave_up = True
+
     
         
 
